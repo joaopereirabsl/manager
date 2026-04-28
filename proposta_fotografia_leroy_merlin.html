@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Fotografia Corporativa - Leroy Merlin Alfragide</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#059669', /* Verde esmeralda profissional */
+                        'primary-dark': '#064e3b',
+                        'secondary': '#10b981',
+                        'accent': '#34d399',
+                        'dark': '#0f172a',
+                        'dark-light': '#1e293b',
+                        'gray-custom': '#64748b',
+                        'light': '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            z-index: -2;
+        }
+        
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeInUp 0.6s ease backwards;
+        }
+        
+        .animate-fade-up-200 {
+            animation: fadeInUp 0.6s ease 0.2s backwards;
+        }
+        
+        .animate-fade-up-400 {
+            animation: fadeInUp 0.6s ease 0.4s backwards;
+        }
+        
+        .animate-fade-up-600 {
+            animation: fadeInUp 0.6s ease 0.6s backwards;
+        }
+
+        .card-hover-effect {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-hover-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #059669, #10b981, #34d399);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .card-hover-effect:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans antialiased text-dark bg-dark overflow-x-hidden">
+    <div class="background"></div>
+    <div class="grain"></div>
+    
+    <div class="max-w-screen-xl mx-auto px-5 md:px-10 py-10">
+        <!-- Hero Section -->
+        <div class="text-center py-20 md:py-32 mb-16 relative">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[600px] h-[600px] rounded-full bg-white/10 blur-3xl opacity-10"></div>
+            </div>
+
+            <span class="inline-block px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-semibold uppercase tracking-wider mb-8 animate-fade-up">
+                Proposta Comercial 2026
+            </span>
+            <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-5 animate-fade-up-200">
+                Fotografia Corporativa<br>Leroy Merlin Alfragide
+            </h1>
+            <p class="text-white/90 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light animate-fade-up-400">
+                Sessões fotográficas individuais para colaboradores, focadas em uniformização profissional e qualidade de imagem.
+            </p>
+            <div class="flex gap-10 justify-center flex-wrap animate-fade-up-600">
+                <div class="flex flex-col items-center gap-1">
+                    <span class="text-white/70 text-sm font-medium uppercase tracking-wider">Entrega</span>
+                    <span class="text-white text-lg font-bold">2 Fotos / Pessoa</span>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <span class="text-white/70 text-sm font-medium uppercase tracking-wider">Local</span>
+                    <span class="text-white text-lg font-bold">Alfragide</span>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <span class="text-white/70 text-sm font-medium uppercase tracking-wider">Uso</span>
+                    <span class="text-white text-lg font-bold">Profissional / Interno</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enquadramento -->
+        <div class="card-hover-effect bg-white rounded-3xl p-8 md:p-10 mb-8 shadow-2xl">
+            <div class="mb-6">
+                <h3 class="text-3xl font-bold text-dark tracking-tight mb-6">Serviço Proposto</h3>
+                <p class="text-dark text-base leading-relaxed">
+                    Esta proposta contempla a realização de <strong>fotografia corporativa tipo passe</strong> para os colaboradores da Leroy Merlin Alfragide. O objetivo é garantir uma imagem profissional, coerente e de alta qualidade para todos os membros da equipa, destinada a uso corporativo interno e/ou profissional.
+                </p>
+            </div>
+        </div>
+
+        <!-- O que inclui -->
+        <div class="flex items-center gap-5 mb-12 pt-5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-3xl font-extrabold shadow-xl shadow-primary/40">1</div>
+            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-tight">O Trabalho Inclui</h2>
+        </div>
+        
+        <div class="card-hover-effect bg-white rounded-3xl p-8 md:p-10 mb-8 shadow-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="flex items-start gap-4 p-4 bg-light rounded-xl transition duration-300 hover:bg-gray-100 hover:translate-x-1">
+                    <div class="w-10 h-10 min-w-[40px] rounded-xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-xl font-bold">
+                        <i data-lucide="camera" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-dark text-sm leading-relaxed"><strong>Setup no Local:</strong> Montagem e preparação de iluminação e fundo fotográfico profissional nas instalações da Leroy Merlin.</p>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-light rounded-xl transition duration-300 hover:bg-gray-100 hover:translate-x-1">
+                    <div class="w-10 h-10 min-w-[40px] rounded-xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-xl font-bold">
+                        <i data-lucide="user-check" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-dark text-sm leading-relaxed"><strong>Direção de Pose:</strong> Orientação individual para garantir o melhor enquadramento e postura de cada colaborador.</p>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-light rounded-xl transition duration-300 hover:bg-gray-100 hover:translate-x-1">
+                    <div class="w-10 h-10 min-w-[40px] rounded-xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-xl font-bold">
+                        <i data-lucide="sliders" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-dark text-sm leading-relaxed"><strong>Edição Base:</strong> Tratamento de luz, cor e uniformização para que todas as fotos mantenham o mesmo padrão visual.</p>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-light rounded-xl transition duration-300 hover:bg-gray-100 hover:translate-x-1">
+                    <div class="w-10 h-10 min-w-[40px] rounded-xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-xl font-bold">
+                        <i data-lucide="package" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-dark text-sm leading-relaxed"><strong>Entrega Organizada:</strong> Exportação final e organização dos ficheiros por colaborador para facilitar a gestão interna.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investimento -->
+        <div class="flex items-center gap-5 mb-12 pt-5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-3xl font-extrabold shadow-xl shadow-primary/40">2</div>
+            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-tight">Investimento</h2>
+        </div>
+
+        <div class="card-hover-effect bg-white rounded-3xl p-8 md:p-10 mb-8 shadow-2xl">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serviço</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descrição</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Valor Unitário</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm font-semibold text-dark">Fotografia Corporativa</td>
+                            <td class="px-6 py-4 text-sm text-gray-custom">Captação, edição e entrega de 2 fotos finais por pessoa</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-bold text-primary">5€ + IVA</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm font-semibold text-dark">Deslocação & Logística</td>
+                            <td class="px-6 py-4 text-sm text-gray-custom">Transporte de equipamento e montagem de setup (por dia)</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-bold text-primary">20€ + IVA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-10 p-6 bg-primary/5 rounded-2xl border border-primary/10">
+                <h4 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                    Observações Importantes
+                </h4>
+                <ul class="text-sm text-dark space-y-3">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-primary mt-0.5"></i>
+                        O value contempla todo o tempo de preparação, organização, edição e pós-produção necessário para garantir a qualidade profissional.
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-primary mt-0.5"></i>
+                        O número total de colaboradores e a distribuição por dias será definido conforme a organização interna da Leroy Merlin.
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-primary mt-0.5"></i>
+                        Cada sessão será paga individualmente conforme o número de colaboradores presentes.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rodapé / Contacto -->
+        <div class="text-center py-10">
+            <p class="text-white/80 text-lg mb-4">Fico disponível para qualquer esclarecimento adicional.</p>
+            <div class="inline-block px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white font-bold">
+                BSL AGENCY - JOÃO PEREIRA
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
